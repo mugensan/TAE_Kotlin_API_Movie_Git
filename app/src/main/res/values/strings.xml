@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">TAE_Kotlin_API_Movie_Github</string>
+    <string name="btn_movie_list">movie list</string>
+    <string name="go_to_github_list">go to_github_list</string>
+    <string name="textviewgit">TextView</string>
+</resources>

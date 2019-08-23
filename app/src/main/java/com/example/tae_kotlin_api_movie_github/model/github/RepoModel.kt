@@ -1,4 +1,5 @@
-package com.example.tae_kotlin_api_movie_github.modelGit
+package com.example.tae_kotlin_api_movie_github.model
+import com.example.tae_kotlin_api_movie_github.modelGit.Owner
 import com.google.gson.annotations.SerializedName
 
 

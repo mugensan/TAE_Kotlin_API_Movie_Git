@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:background="@color/bg_fb"
         android:layout_height="match_parent"
-        tools:context=".PrimaryActivity.MainActivity">
+        tools:context=".PrimaryActivity.PrimaryActivity">
 
     <Button
             android:id="@+id/btn_go_to_movie"

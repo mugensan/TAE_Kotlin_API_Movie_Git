@@ -1,4 +1,4 @@
-package com.example.tae_kotlin_api_movie_github.viewGit
+package com.example.tae_kotlin_api_movie_github.view.github
 
 class ConstantsGit {
     companion object{

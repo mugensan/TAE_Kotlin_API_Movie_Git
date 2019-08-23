@@ -1,19 +1,20 @@
-package com.example.tae_kotlin_api_movie_github.viewMovie
+package com.example.tae_kotlin_api_movie_github.view.movie
 
 
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.tae_kotlin_api_movie_github.Constants
+import com.example.tae_kotlin_api_movie_github.common.Constants
 //import com.example.tae_kotlin_api.Constants
 //import com.example.tae_kotlin_api.R
 //import com.example.tae_kotlin_api.model.MoviePopular
 //import com.example.tae_kotlin_api.model.Results
 import com.example.tae_kotlin_api_movie_github.R
-import com.example.tae_kotlin_api_movie_github.modelMovie.MoviePopular
-import com.example.tae_kotlin_api_movie_github.modelMovie.Results
+import com.example.tae_kotlin_api_movie_github.common.inflate
+import com.example.tae_kotlin_api_movie_github.common.loadImg
+import com.example.tae_kotlin_api_movie_github.model.movie.MoviePopular
+import com.example.tae_kotlin_api_movie_github.model.movie.Results
 
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.row.view.*
@@ -28,7 +29,15 @@ class MovieAdapter(private val moviePopular: MoviePopular, private val listener:
         //not return right away
 //        val view = MovieViewHolder(LayoutInflater.from(context).inflate(R.layout.row,parent,false))
         // returning right away 2nd way to do
-        return MovieViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.row,parent,false))
+//        return MovieViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.row,parent,false))
+
+        //this is extension fun we created // replaces line 30 - 32
+        return MovieViewHolder(
+            parent.inflate(
+                R.layout.row,
+                false
+            )
+        )
 
     }
 
@@ -39,10 +48,13 @@ class MovieAdapter(private val moviePopular: MoviePopular, private val listener:
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
 
         //creating the binder, after the [position]. <this is where you get the option for ya list requests
-        holder.tv_title.text = moviePopular.results[position].title
+        val item = moviePopular.results[position]
+        holder.tv_title.text = item.title
         //for the image, declare the image in the viewHolder
 //        Picasso.get().load("https://image.tmdb.org/t/p/w185" + moviePopular.results[position].poster_path).into(holder.image)
-        Picasso.get().load(Constants.IMG_MOVIE + moviePopular.results[position].poster_path).into(holder.image);
+        Picasso.get().load(Constants.IMG_MOVIE + moviePopular.results[position].poster_path).into(holder.image)
+
+        holder.image.loadImg("https://image.tmdb.org/t/p/w185"+item.poster_path)
         //holder for the onClickListener
         holder.bind(moviePopular.results[position],listener)
     }

@@ -10,16 +10,17 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".PrimaryActivity.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".viewMovie.MainActivityMovie"/>
-        <activity android:name=".viewGit.MainActivityGit"/>
-        <activity android:name=".viewMovie.DisplayMovieInfo"/>
+        <activity android:name=".view.movie.MovieActivity"/>
+        <activity android:name=".view.github.GithubActivity"/>
+        <activity android:name=".view.movie.MovieDetailActivity"/>
+        <activity android:name=".PrimaryActivity.PrimaryActivity" />
     </application>
 
 </manifest>

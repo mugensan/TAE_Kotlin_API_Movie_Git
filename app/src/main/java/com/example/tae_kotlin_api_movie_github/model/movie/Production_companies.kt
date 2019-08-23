@@ -1,4 +1,4 @@
-package com.example.tae_kotlin_api_movie_github.modelMovie
+package com.example.tae_kotlin_api_movie_github.model.movie
 
 import com.google.gson.annotations.SerializedName
 
@@ -14,20 +14,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 
 
-data class Results (
+data class Production_companies (
 
-	@SerializedName("popularity") val popularity : Double,
-	@SerializedName("vote_count") val vote_count : Int,
-	@SerializedName("video") val video : Boolean,
-	@SerializedName("poster_path") val poster_path : String,
 	@SerializedName("id") val id : Int,
-	@SerializedName("adult") val adult : Boolean,
-	@SerializedName("backdrop_path") val backdrop_path : String,
-	@SerializedName("original_language") val original_language : String,
-	@SerializedName("original_title") val original_title : String,
-	@SerializedName("genre_ids") val genre_ids : List<Int>,
-	@SerializedName("title") val title : String,
-	@SerializedName("vote_average") val vote_average : Double,
-	@SerializedName("overview") val overview : String,
-	@SerializedName("release_date") val release_date : String
+	@SerializedName("logo_path") val logo_path : String,
+	@SerializedName("name") val name : String,
+	@SerializedName("origin_country") val origin_country : String
 )

@@ -1,4 +1,4 @@
-package com.example.tae_kotlin_api_movie_github
+package com.example.tae_kotlin_api_movie_github.common
 
 class Constants {
     companion object {

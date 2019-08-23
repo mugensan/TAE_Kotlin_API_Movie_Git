@@ -1,4 +1,4 @@
-package com.example.tae_kotlin_api_movie_github.modelMovie
+package com.example.tae_kotlin_api_movie_github.model.movie
 
 import com.google.gson.annotations.SerializedName
 

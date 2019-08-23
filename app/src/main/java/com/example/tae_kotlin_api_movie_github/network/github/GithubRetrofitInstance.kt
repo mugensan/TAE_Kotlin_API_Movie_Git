@@ -1,15 +1,13 @@
-package com.example.tae_kotlin_api_movie_github.networkGit
+package com.example.tae_kotlin_api_movie_github.network.github
 
-import android.provider.SyncStateContract
-import com.example.tae_kotlin_api_movie_github.Constants
-import com.example.tae_kotlin_api_movie_github.viewGit.ConstantsGit
+import com.example.tae_kotlin_api_movie_github.view.github.ConstantsGit
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class RetrofitInstanceGit {
+class GithubRetrofitInstance {
     val retrofitInstances: Retrofit
         get() {
             val httpLoggingInterceptor = HttpLoggingInterceptor()

@@ -1,20 +1,22 @@
-package com.example.tae_kotlin_api_movie_github.viewGit
+package com.example.tae_kotlin_api_movie_github.view.github
 
-import android.view.LayoutInflater
+
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tae_kotlin_api_movie_github.R
-import com.example.tae_kotlin_api_movie_github.modelGit.RepoModel
-import com.example.tae_kotlin_api_movie_github.modelMovie.Results
-import com.example.tae_kotlin_api_movie_github.viewMovie.OnMovieClickListener
+import com.example.tae_kotlin_api_movie_github.common.inflate
+import com.example.tae_kotlin_api_movie_github.model.RepoModel
+import com.example.tae_kotlin_api_movie_github.model.movie.Results
 import kotlinx.android.synthetic.main.cardviewlayout.view.*
-import kotlinx.android.synthetic.main.git_main_layout.view.*
-import kotlinx.android.synthetic.main.row.view.*
+
 
 
 //in the adapter you have a constructor
-class GitAdapter(private val repoModel: List<RepoModel>) :
+class GitAdapter(
+    private val repoModel: List<RepoModel>,
+    onGitClickListener: Any?
+) :
     RecyclerView.Adapter<GitViewHolder>() {
     override fun onBindViewHolder(holder: GitViewHolder, position: Int) {
             holder.title.text = repoModel[position].commits_url
@@ -26,9 +28,17 @@ class GitAdapter(private val repoModel: List<RepoModel>) :
         //not return right away
 //        val view = MovieViewHolder(LayoutInflater.from(context).inflate(R.layout.row,parent,false))
         // returning right away 2nd way to do
+//        return GitViewHolder(
+//            LayoutInflater.from(parent.context).inflate(R.layout.cardviewlayout, parent, false)
+
+        //this is the extension fun we created
         return GitViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.cardviewlayout, parent, false)
+            parent.inflate(
+                R.layout.cardviewlayout,
+                false
+            )
         )
+//        )
 
     }
 
@@ -50,18 +60,13 @@ class GitAdapter(private val repoModel: List<RepoModel>) :
 //we are extending the viewHolder, it can be outside or inside the class
 //outside
 class GitViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-//   val res = response.body()
-//    Log.d("DISPLAYGITINFOR", res!!.[position])
-    //this is where you load your data to the TextView in XML
 
-//    val id = view.id
-
-//    val title = view.tv_title_git
     val title = view.tv_cv_title
-//    val cardView = view.tv_cv_title
-//    val rv_data_display_git = view.cv_displayCard
 
 
+interface onGitClickListener{
+    fun onGitClickListener(result: Results)
+}
 
 
 }

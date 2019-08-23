@@ -1,4 +1,4 @@
-package com.example.tae_kotlin_api_movie_github.modelMovie
+package com.example.tae_kotlin_api_movie_github.model.movie
 
 import com.google.gson.annotations.SerializedName
 
@@ -14,10 +14,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 
 
-data class secondAct (
+data class Spoken_languages (
 
-	@SerializedName("page") val page : Int,
-	@SerializedName("total_results") val total_results : Int,
-	@SerializedName("total_pages") val total_pages : Int,
-	@SerializedName("results") val results : List<Results>
+	@SerializedName("iso_639_1") val iso_639_1 : String,
+	@SerializedName("name") val name : String
 )

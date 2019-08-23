@@ -1,6 +1,6 @@
-package com.example.tae_kotlin_api_movie_github.viewMovie
+package com.example.tae_kotlin_api_movie_github.view.movie
 
-class ConstantsMovie {
+class MovieContants {
     companion object {
         const val BASE_URL_MOVIE = "https://api.themoviedb.org/3/"
         const val API_KEY_MOVIE = "1345e1dd35f900792734afba370eec11"

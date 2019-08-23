@@ -1,15 +1,15 @@
-package com.example.tae_kotlin_api_movie_github.networkMovie
+package com.example.tae_kotlin_api_movie_github.network.movie
 
 //import com.example.tae_kotlin_api.model.MoviePopular
 //import com.example.tae_kotlin_api.mo`del.Results2
-import com.example.tae_kotlin_api_movie_github.modelMovie.MoviePopular
-import com.example.tae_kotlin_api_movie_github.modelMovie.Results2
+import com.example.tae_kotlin_api_movie_github.model.movie.MoviePopular
+import com.example.tae_kotlin_api_movie_github.model.movie.Results2
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 
-interface MovieRequest {
+interface MovieInterface {
 
     @GET("movie/popular")
     fun getMoviesPopular(@Query("api_key") apiKey:String):Call<MoviePopular>

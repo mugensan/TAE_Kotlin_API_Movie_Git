@@ -1,14 +1,14 @@
-package com.example.tae_kotlin_api_movie_github.networkMovie
+package com.example.tae_kotlin_api_movie_github.network.movie
 
 //import com.example.tae_kotlin_api.Constants
 
-import com.example.tae_kotlin_api_movie_github.Constants
+import com.example.tae_kotlin_api_movie_github.common.Constants
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class RetrofitInstances {
+class MovieRetrofitInstance {
 
     //step 2
 
